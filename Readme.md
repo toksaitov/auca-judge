@@ -39,9 +39,10 @@ acceptable level of security to run untrusted user code from user submissions.
 
 * `docker-compose down`: to stop the services
 
-* `docker-compose exec auca-judge-queue npm run gulp`: to recreate the
-  `problems` collection inside the `auca-judge-problem-db` container and import
-  sample data from the `problems` directory to the service database.
+* `docker-compose exec auca-judge-queue sh -c "cd /auca-judge-back && npm run gulp"`:
+  to recreate the `problems` collection inside the `auca-judge-problem-db`
+  container and import sample data from the `problems` directory to the service
+  database.
 
 * `docker-compose -f docker-compose.yml -f docker-compose.development.yml ...`:
   to mount project directories on the host machine under project directories
@@ -55,8 +56,8 @@ acceptable level of security to run untrusted user code from user submissions.
 
 * `docker-compose up [-d]`: to start all services
 
-* `docker-compose exec auca-judge-queue npm run gulp`: to import
-  sample data from the `problems` directory to the service database
+* `docker-compose exec auca-judge-queue sh -c "cd /auca-judge-back && npm run gulp"`:
+  to import sample data from the `problems` directory to the service database
 
 * `docker-compose scale auca-judge-queue=<number of instances>`: to start a
   specific number of instances of the *auca-judge-queue* and spread them across
