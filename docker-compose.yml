@@ -1,0 +1,42 @@
+version: "2"
+
+services:
+  auca-judge-front:
+    build: "./auca-judge-front"
+    image: "toksaitov/auca-judge-front"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+
+  auca-judge-queue:
+    build: "./auca-judge-queue"
+    image: "toksaitov/auca-judge-queue"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    depends_on:
+      - "auca-judge-etcd-db"
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+
+  auca-judge-etcd-db:
+    image: "quay.io/coreos/etcd:v2.3.3"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-discovery-db"
+  auca-judge-redis-db:
+    image: "redis:3.0.7"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-queue-db"
+          - "auca-judge-state-db"
+  auca-judge-mongo-db:
+    image: "mongo:3.2.6"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-task-db"
+          - "auca-judge-problem-db"

@@ -1,0 +1,47 @@
+version: "2"
+
+# The list of all services, their build directories and image names to build
+# and pull only. Do not try to start the system by using this file.
+
+services:
+  auca-judge-front:
+    build: "./auca-judge-front"
+    image: "toksaitov/auca-judge-front"
+    depends_on:
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+  auca-judge-back:
+    build: "./auca-judge-back"
+    image: "toksaitov/auca-judge-back"
+    depends_on:
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+  auca-judge-queue:
+    build: "./auca-judge-queue"
+    image: "toksaitov/auca-judge-queue"
+    depends_on:
+      - "auca-judge-back"
+      - "auca-judge-etcd-db"
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+
+  auca-judge-agent:
+    build: "./auca-judge-agent"
+    image: "toksaitov/auca-judge-agent"
+  c-build:
+    build: "./auca-judge-images/c-build"
+    image: "toksaitov/auca-judge-images:c-build"
+    depends_on:
+      - "auca-judge-agent"
+  c-test:
+    build: "./auca-judge-images/c-test"
+    image: "toksaitov/auca-judge-images:c-test"
+    depends_on:
+      - "auca-judge-agent"
+
+  auca-judge-etcd-db:
+    image: "quay.io/coreos/etcd:v2.3.3"
+  auca-judge-redis-db:
+    image: "redis:3.0.7"
+  auca-judge-mongo-db:
+    image: "mongo:3.2.6"
