@@ -1,0 +1,6 @@
+version: "2"
+
+services:
+  auca-judge-queue:
+    volumes:
+      - ".:/auca-judge-queue"
