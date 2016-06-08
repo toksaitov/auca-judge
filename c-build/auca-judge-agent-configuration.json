@@ -1,0 +1,6 @@
+{
+  "port": 7742,
+  "shell": "gcc -o $SUBMISSION_ID $SUBMISSION_ID.c",
+  "artifacts": ["$SUBMISSION_ID"],
+  "workingDirectory": "/submission"
+}
