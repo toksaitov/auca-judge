@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  auca-judge-back:
+    build: "."
+    image: "toksaitov/auca-judge-back"
+    depends_on:
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+
+  auca-judge-redis-db:
+    image: "redis:3.0.7"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-state-db"
+  auca-judge-mongo-db:
+    image: "mongo:3.2.6"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-problem-db"

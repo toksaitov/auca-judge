@@ -1,0 +1,24 @@
+{
+  "name": "auca-judge-end",
+  "description": "A back end for the auca-judge system",
+  "author": "Dmitrii Toksaitov <dmitrii@toksaitov.com>",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "dockerode": "apocas/dockerode#a71aad984a",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.14",
+    "node-uuid": "^1.4.7",
+    "redis": "^2.6.0-2",
+    "request": "^2.72.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "start": "node auca-judge-back.js",
+    "gulp": "gulp"
+  },
+  "private": true
+}
