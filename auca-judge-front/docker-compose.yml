@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  auca-judge-front:
+    build: "."
+    image: "toksaitov/auca-judge-front"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "auca-judge-redis-db"
+      - "auca-judge-mongo-db"
+
+  auca-judge-redis-db:
+    image: "redis:3.0.7"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-queue-db"
+          - "auca-judge-state-db"
+  auca-judge-mongo-db:
+    image: "mongo:3.2.6"
+    networks:
+      default:
+        aliases:
+          - "auca-judge-task-db"
