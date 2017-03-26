@@ -28,6 +28,11 @@ services:
   auca-judge-agent:
     build: "./auca-judge-agent"
     image: "toksaitov/auca-judge-agent"
+  auca-judge-agent-fat:
+    build:
+      context: "./auca-judge-agent"
+      dockerfile: "Dockerfile.fat"
+    image: "toksaitov/auca-judge-agent:fat"
   c-build:
     build: "./auca-judge-images/c-build"
     image: "toksaitov/auca-judge-images:c-build"
@@ -36,6 +41,16 @@ services:
   c-test:
     build: "./auca-judge-images/c-test"
     image: "toksaitov/auca-judge-images:c-test"
+    depends_on:
+      - "auca-judge-agent"
+  swift-build:
+    build: "./auca-judge-images/swift-build"
+    image: "toksaitov/auca-judge-images:swift-build"
+    depends_on:
+      - "auca-judge-agent"
+  swift-test:
+    build: "./auca-judge-images/swift-test"
+    image: "toksaitov/auca-judge-images:swift-test"
     depends_on:
       - "auca-judge-agent"
 
