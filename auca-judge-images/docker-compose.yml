@@ -8,3 +8,11 @@ services:
   c-test:
     build: "./c-test"
     image: "toksaitov/auca-judge-images:c-test"
+
+  swift-build:
+    build: "./swift-build"
+    image: "toksaitov/auca-judge-images:swift-build"
+
+  swift-test:
+    build: "./swift-test"
+    image: "toksaitov/auca-judge-images:swift-test"

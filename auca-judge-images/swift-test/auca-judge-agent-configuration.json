@@ -1,0 +1,6 @@
+{
+  "port": 7742,
+  "shell": "/runner/swift-test-runner.sh $SUBMISSION_ID",
+  "artifacts": ["$SUBMISSION_ID.output"],
+  "workingDirectory": "/submission"
+}
