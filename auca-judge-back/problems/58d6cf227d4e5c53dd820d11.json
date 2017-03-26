@@ -1,0 +1,50 @@
+{
+  "_id": { "$oid": "58d6cf227d4e5c53dd820d11" },
+  "build": {
+    "image": "toksaitov/auca-judge-images:swift-build",
+    "extension": ".swift"
+  },
+  "test": {
+    "image": "toksaitov/auca-judge-images:swift-test",
+    "preprocess": true,
+    "continueOnFailure": true,
+    "tests": [
+      {
+        "input": "0\n9\n",
+        "output": "9"
+      },
+      {
+        "input": "2\n2\n",
+        "output": "4"
+      },
+      {
+        "input": "3\n5\n",
+        "output": "8"
+      },
+      {
+        "input": "1\n-1\n",
+        "output": "0"
+      },
+      {
+        "input": "0\n0\n",
+        "output": "0"
+      },
+      {
+        "input": "-2\n-10\n",
+        "output": "-12"
+      },
+      {
+        "input": "1000\n3\n",
+        "output": "1003"
+      },
+      {
+        "input": "4611686018427387903\n4611686018427387904\n",
+        "output": "9223372036854775807"
+      },
+      {
+        "input": "0\n-9223372036854775808\n",
+        "output": "-9223372036854775808"
+      }
+    ]
+  }
+}
