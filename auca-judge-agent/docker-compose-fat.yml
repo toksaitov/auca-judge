@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  auca-judge-agent:
+    build: "."
+    image: "toksaitov/auca-judge-agent:fat"
+    ports:
+      - "8080:8080"

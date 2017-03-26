@@ -7,6 +7,9 @@ containers for the [auca-judge](https://github.com/toksaitov/auca-judge) system.
 *auca-judge-agent* allows to move the build and test container runtime to a
 separate host from the [auca-judge-back](https://github.com/toksaitov/auca-judge-back).
 
+The fat version of *auca-judge-agent* is based on Ubuntu Docker images. Use it
+if the target build and test system is not available on Alpine Linux.
+
 # Services
 
 *auca-judge-agent* is part of the [auca-judge](https://github.com/toksaitov/auca-judge)
