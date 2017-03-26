@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AUCA Judge</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+    <script src="front.js"></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="index.html">
+        <img class="logotype" src="logotype.svg" alt="Logotype">
+      </a>
+      <h1 class="title">Judge</h1>
+    </header>
+    <main class="page-content">
+      <section class="problem">
+        <article class="description">
+          <h1>Problem #1: Sum of Numbers (Swift)</h1>
+          <p>Find a sum of two numbers.</p>
+          <h2>Input Data</h2>
+          <p>The program will receive two numbers on separate lines
+          on standard input.</p>
+          <h2>Output Data</h2>
+          <p>The program should output the sum of two numbers to
+          standard output.</p>
+          <h2>Examples</h2>
+          <table class="sample">
+            <tr>
+              <th>Sample Input</th>
+              <th>Desired Output</th>
+            </tr>
+            <tr>
+              <td>2<br>2</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>2<br>3</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>5<br>-3</td>
+              <td>2</td>
+            </tr>
+          </table>
+          <h2>Constraints</h2>
+          <table class="constraints">
+            <tr>
+              <th>Time limit</td>
+              <td>1 second</td>
+            </tr>
+            <tr>
+              <th>Memory limit</td>
+              <td>64 megabytes</td>
+            </tr>
+          </table>
+        </article>
+      </section>
+      <section class="solution">
+        <section class="submission">
+          <h2>Submission</h2>
+          <form method="post" action="/submit">
+            <input type="hidden" name="id" value="58d6cf227d4e5c53dd820d11">
+            <input type="hidden" name="submission" value="">
+            <div id="editor"></div>
+            <input type="submit" name="submit" value="submit">
+          </form>
+        </section>
+        <aside class="results">
+          <h2>Results</h2>
+          <p class="error" style="display:none"></p>
+          <table>
+            <thead>
+              <tr>
+                <th>Test #</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </aside>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <p class="copyright">&copy; 2016 AUCA</p>
+    </footer>
+    <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/clouds");
+      editor.getSession().setMode("ace/mode/swift");
+    </script>
+  </body>
+</html>

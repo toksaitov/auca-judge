@@ -258,15 +258,9 @@
     });
   }
 
-  function setupEditor(editor) {
-    editor.setTheme("ace/theme/clouds");
-    editor.getSession().setMode("ace/mode/c_cpp");
-  }
-
   ready(function() {
-    var editor = ace.edit("editor");
-    setupEditor(editor);
-
+    var editor =
+      ace.edit("editor");
     var form =
       document.querySelector(".submission > form");
 
