@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, label {
+h1, h2, h3, h4, h5, h6, a, label {
   color: rgb(200, 0, 0);
 }
 
@@ -20,6 +20,14 @@ h1 {
 
 h1, h2, h3, h4, h5, h6, p, table {
   margin: 0.5em 0;
+}
+
+a:hover { 
+  color: rgb(255, 0, 0);
+}
+
+a:active {
+  color: rgb(222, 0, 0);
 }
 
 table {
@@ -56,19 +64,18 @@ th, td {
   text-shadow: -1px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.page-header > .logotype {
+.page-header .logotype {
   position: relative;
   width: 190px;
-  top: 19px;
+  top: 23px;
 }
 
-.page-header > .title {
+.page-header .title {
   color: white;
   margin-top: 1.2em;
 }
 
 .page-content {
-  flex: 1;
   margin: 2em 8%;
   box-shadow: 0 0 100px -40px rgba(0, 0, 0, 0.3);
 }
