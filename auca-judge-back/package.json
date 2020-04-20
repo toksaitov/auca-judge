@@ -7,7 +7,7 @@
     "body-parser": "^1.15.0",
     "dockerode": "apocas/dockerode#a71aad984a",
     "express": "^4.13.4",
-    "mongoose": "^4.4.14",
+    "mongoose": "^5.9.9",
     "node-uuid": "^1.4.7",
     "redis": "^2.6.0-2",
     "request": "^2.72.0",
