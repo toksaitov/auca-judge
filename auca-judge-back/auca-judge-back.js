@@ -86,11 +86,11 @@ const Docker =
 
 const BuildAgentConnectionOptions = {
   "port": "7742",
-  "network": "aucajudge_default"
+  "network": "auca-judge_default"
 };
 const TestAgentConnectionOptions = {
   "port": "7742",
-  "network": "aucajudge_default"
+  "network": "auca-judge_default"
 };
 
 const Logger =
